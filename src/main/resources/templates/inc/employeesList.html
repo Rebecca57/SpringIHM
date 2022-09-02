@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<div data-th-fragment="employees">
+		List of Employees: </br>
+		<div data-th-if="${employees.empty}">La liste es vide</div>
+		<tr th:each="employee, i: ${employees}">
+			<input type="hidden" data-th-name="firstname" data-th-value="${employee.firstname}">
+			<input type="hidden" data-th-name="lastname" data-th-value="${employee.lastname}">
+			<form method="post" data-th-action="@{/delete}">
+				<input type="hidden" data-th-name="index" data-th-value="${i.index}">
+				<span data-th-text="${employee.firstname}"></span>
+				<span data-th-text="${employee.lastname}"></span>
+				<input type="submit" value="X"><br/>
+			</form>
+		</tr>
+	</div>
+
+</body>
+</html>

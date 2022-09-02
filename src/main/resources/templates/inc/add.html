@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<div data-th-fragment="form">
+		<form method="post" data-th-action="@{/add}" data-th-object="${employee}" accept-charset="utf-8">
+			<label>Firstname</label><input type="text" data-th-field="*{firstname}"><br/>
+			<label>Lastname</label><input type="text" data-th-field="*{lastname}">
+			<input type="submit" value="add">	
+		</form>
+	</div>
+
+</body>
+</html>
